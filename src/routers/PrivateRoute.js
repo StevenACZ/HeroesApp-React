@@ -7,6 +7,10 @@ const PrivateRoute = ({
   component: Component,
   ...rest
 }) => {
+  if ( isAuthenticated ) {
+    localStorage.setItem('lastPath', `${rest.location.pathname}${rest.location.search}`)
+  } 
+
   return (
     <Route { ...rest }
       component={ (props) => (
