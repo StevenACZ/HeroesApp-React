@@ -8,14 +8,15 @@ const LoginScreen = ({ history }) => {
 
   const handleLogin = () => {
     // history.push('/');
-    history.replace('/');
-
+    
     dispatch({
       type: types.login,
       payload: {
         name: 'Pepe'
       }
     })
+    
+    history.replace('/');
   }
 
 
